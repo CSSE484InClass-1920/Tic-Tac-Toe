@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  @IBAction func pressedNewGame(_ sender: Any) {
+    print("Pressed new game")
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.

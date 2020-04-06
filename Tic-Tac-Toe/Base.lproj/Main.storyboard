@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,97 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JK7-On-1iw">
+                                <rect key="frame" x="0.0" y="1111" width="834" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="e1Y-IS-cA7"/>
+                                    <barButtonItem title="New Game" id="Txx-EJ-kYp">
+                                        <connections>
+                                            <action selector="pressedNewGame:" destination="BYZ-38-t0r" id="YCt-7V-1OU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dpm-WV-OAJ">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="rUQ-k2-IBQ"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="X's Turn" id="8Rb-nF-sCC">
+                                        <barButtonItem key="leftBarButtonItem" title="New Game" id="7ZT-yR-rch">
+                                            <connections>
+                                                <action selector="pressedNewGame:" destination="BYZ-38-t0r" id="Oj7-tA-AQP"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rUQ-k2-IBQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="rUQ-k2-IBQ"/>
+                                    </mask>
+                                </variation>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JK7-On-1iw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4If-HG-O3O"/>
+                            <constraint firstItem="JK7-On-1iw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="H2p-b9-j3c"/>
+                            <constraint firstItem="Dpm-WV-OAJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W3M-aC-BVh"/>
+                            <constraint firstItem="Dpm-WV-OAJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aVW-wV-d2r"/>
+                            <constraint firstItem="JK7-On-1iw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bvr-qK-RLl"/>
+                            <constraint firstItem="Dpm-WV-OAJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qyT-UQ-wgp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="JK7-On-1iw"/>
+                                <exclude reference="Dpm-WV-OAJ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="W3M-aC-BVh"/>
+                                <exclude reference="aVW-wV-d2r"/>
+                                <exclude reference="qyT-UQ-wgp"/>
+                                <exclude reference="4If-HG-O3O"/>
+                                <exclude reference="H2p-b9-j3c"/>
+                                <exclude reference="bvr-qK-RLl"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="JK7-On-1iw"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4If-HG-O3O"/>
+                                <include reference="H2p-b9-j3c"/>
+                                <include reference="bvr-qK-RLl"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="Dpm-WV-OAJ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="W3M-aC-BVh"/>
+                                <include reference="aVW-wV-d2r"/>
+                                <include reference="qyT-UQ-wgp"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="124"/>
         </scene>
     </scenes>
 </document>
