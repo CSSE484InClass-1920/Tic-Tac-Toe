@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,20 +12,9 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JK7-On-1iw">
-                                <rect key="frame" x="0.0" y="1111" width="834" height="49"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="e1Y-IS-cA7"/>
-                                    <barButtonItem title="New Game" id="Txx-EJ-kYp">
-                                        <connections>
-                                            <action selector="pressedNewGame:" destination="BYZ-38-t0r" id="YCt-7V-1OU"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dpm-WV-OAJ">
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="68"/>
                                 <constraints>
@@ -51,26 +40,219 @@
                                     </mask>
                                 </variation>
                             </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JK7-On-1iw">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="e1Y-IS-cA7"/>
+                                    <barButtonItem title="New Game" id="Txx-EJ-kYp">
+                                        <connections>
+                                            <action selector="pressedNewGame:" destination="BYZ-38-t0r" id="YCt-7V-1OU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="24B-GX-p0o" userLabel="Usable Area">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rzL-Gu-Lrh" userLabel="Board">
+                                        <rect key="frame" x="20" y="207.5" width="374" height="414"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yft-nw-tq5">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="414"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UfA-eB-q9J">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="414"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oZR-Js-qpW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="138"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mje-h5-1Yk" userLabel="0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="138"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cnu-IY-8Yh"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yU1-j6-oJv" userLabel="1">
+                                                                <rect key="frame" x="124.5" y="0.0" width="125" height="138"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3SN-Jd-7ak"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20H-2E-Xal" userLabel="2">
+                                                                <rect key="frame" x="249.5" y="0.0" width="124.5" height="138"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CpF-RO-113"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bUX-SY-ZWC">
+                                                        <rect key="frame" x="0.0" y="138" width="374" height="138"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOm-Hp-B91" userLabel="3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="138"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BDb-Qv-Wt8"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fok-vi-GAS" userLabel="4">
+                                                                <rect key="frame" x="124.5" y="0.0" width="125" height="138"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k2I-xo-IVb"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gP4-a5-Lqx" userLabel="5">
+                                                                <rect key="frame" x="249.5" y="0.0" width="124.5" height="138"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YZj-zB-Ljf"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="N6Q-Rh-QMn">
+                                                        <rect key="frame" x="0.0" y="276" width="374" height="138"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bL-UB-RIi" userLabel="6">
+                                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="138"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fzv-VT-z7h"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJz-qX-eEY" userLabel="7">
+                                                                <rect key="frame" x="124.5" y="0.0" width="125" height="138"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="flp-4z-etd"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfo-of-KLP" userLabel="8">
+                                                                <rect key="frame" x="249.5" y="0.0" width="124.5" height="138"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7sP-hW-QzM"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="UfA-eB-q9J" secondAttribute="trailing" id="9hy-Ql-duW"/>
+                                            <constraint firstAttribute="trailing" secondItem="Yft-nw-tq5" secondAttribute="trailing" id="ARZ-K1-nfn"/>
+                                            <constraint firstItem="Yft-nw-tq5" firstAttribute="top" secondItem="rzL-Gu-Lrh" secondAttribute="top" id="Aqv-PO-gjj"/>
+                                            <constraint firstAttribute="bottom" secondItem="UfA-eB-q9J" secondAttribute="bottom" id="LyF-cp-dDL"/>
+                                            <constraint firstAttribute="width" constant="670" id="QAw-4b-qfH"/>
+                                            <constraint firstItem="UfA-eB-q9J" firstAttribute="leading" secondItem="rzL-Gu-Lrh" secondAttribute="leading" id="S3b-y3-fLO"/>
+                                            <constraint firstItem="UfA-eB-q9J" firstAttribute="top" secondItem="rzL-Gu-Lrh" secondAttribute="top" id="fUs-fY-zKf"/>
+                                            <constraint firstAttribute="height" constant="670" id="l9S-Dh-DjH"/>
+                                            <constraint firstAttribute="bottom" secondItem="Yft-nw-tq5" secondAttribute="bottom" id="oLm-3g-Fbe"/>
+                                            <constraint firstAttribute="width" secondItem="rzL-Gu-Lrh" secondAttribute="height" multiplier="28:31" id="w1L-t8-oqj"/>
+                                            <constraint firstItem="Yft-nw-tq5" firstAttribute="leading" secondItem="rzL-Gu-Lrh" secondAttribute="leading" id="yvv-Dd-RL0"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="QAw-4b-qfH"/>
+                                                <exclude reference="l9S-Dh-DjH"/>
+                                                <exclude reference="w1L-t8-oqj"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="w1L-t8-oqj"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="QAw-4b-qfH"/>
+                                                <include reference="l9S-Dh-DjH"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X's Turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYn-Ah-NFG">
+                                        <rect key="frame" x="20" y="147.5" width="374" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="rzL-Gu-Lrh" firstAttribute="top" secondItem="lYn-Ah-NFG" secondAttribute="bottom" constant="12" id="5ua-Tx-aJ2"/>
+                                    <constraint firstItem="rzL-Gu-Lrh" firstAttribute="centerY" secondItem="24B-GX-p0o" secondAttribute="centerY" id="QJy-Q5-aHS">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                    </constraint>
+                                    <constraint firstItem="rzL-Gu-Lrh" firstAttribute="centerY" secondItem="24B-GX-p0o" secondAttribute="centerY" id="Ufl-zq-dch"/>
+                                    <constraint firstAttribute="trailing" secondItem="lYn-Ah-NFG" secondAttribute="trailing" constant="20" id="VlY-CW-q3u"/>
+                                    <constraint firstItem="rzL-Gu-Lrh" firstAttribute="centerX" secondItem="24B-GX-p0o" secondAttribute="centerX" id="WU6-s0-F1j"/>
+                                    <constraint firstItem="lYn-Ah-NFG" firstAttribute="leading" secondItem="24B-GX-p0o" secondAttribute="leading" constant="20" id="nV3-U8-tvD"/>
+                                    <constraint firstItem="rzL-Gu-Lrh" firstAttribute="leading" secondItem="24B-GX-p0o" secondAttribute="leading" constant="20" id="seH-ng-d14"/>
+                                    <constraint firstAttribute="trailing" secondItem="rzL-Gu-Lrh" secondAttribute="trailing" constant="20" id="yfs-Gj-NgY"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="lYn-Ah-NFG"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="5ua-Tx-aJ2"/>
+                                        <exclude reference="QJy-Q5-aHS"/>
+                                        <exclude reference="Ufl-zq-dch"/>
+                                        <exclude reference="WU6-s0-F1j"/>
+                                        <exclude reference="seH-ng-d14"/>
+                                        <exclude reference="yfs-Gj-NgY"/>
+                                        <exclude reference="VlY-CW-q3u"/>
+                                        <exclude reference="nV3-U8-tvD"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="lYn-Ah-NFG"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="5ua-Tx-aJ2"/>
+                                        <include reference="QJy-Q5-aHS"/>
+                                        <include reference="seH-ng-d14"/>
+                                        <include reference="yfs-Gj-NgY"/>
+                                        <include reference="VlY-CW-q3u"/>
+                                        <include reference="nV3-U8-tvD"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Ufl-zq-dch"/>
+                                        <include reference="WU6-s0-F1j"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="JK7-On-1iw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4If-HG-O3O"/>
                             <constraint firstItem="JK7-On-1iw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="H2p-b9-j3c"/>
+                            <constraint firstItem="24B-GX-p0o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IJB-XT-SWF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="24B-GX-p0o" secondAttribute="bottom" constant="49" id="Qht-AH-xMV"/>
+                            <constraint firstItem="24B-GX-p0o" firstAttribute="top" secondItem="Dpm-WV-OAJ" secondAttribute="bottom" id="SUH-nu-PiK"/>
                             <constraint firstItem="Dpm-WV-OAJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W3M-aC-BVh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="24B-GX-p0o" secondAttribute="trailing" id="aTD-jI-wTX"/>
                             <constraint firstItem="Dpm-WV-OAJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aVW-wV-d2r"/>
                             <constraint firstItem="JK7-On-1iw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bvr-qK-RLl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="24B-GX-p0o" secondAttribute="bottom" id="eCh-XH-mUa"/>
+                            <constraint firstItem="24B-GX-p0o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iqa-vL-UYs"/>
                             <constraint firstItem="Dpm-WV-OAJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qyT-UQ-wgp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="JK7-On-1iw"/>
                                 <exclude reference="Dpm-WV-OAJ"/>
+                                <exclude reference="JK7-On-1iw"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Qht-AH-xMV"/>
+                                <exclude reference="eCh-XH-mUa"/>
                                 <exclude reference="W3M-aC-BVh"/>
                                 <exclude reference="aVW-wV-d2r"/>
                                 <exclude reference="qyT-UQ-wgp"/>
+                                <exclude reference="SUH-nu-PiK"/>
+                                <exclude reference="iqa-vL-UYs"/>
                                 <exclude reference="4If-HG-O3O"/>
                                 <exclude reference="H2p-b9-j3c"/>
                                 <exclude reference="bvr-qK-RLl"/>
@@ -81,6 +263,8 @@
                                 <include reference="JK7-On-1iw"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Qht-AH-xMV"/>
+                                <include reference="iqa-vL-UYs"/>
                                 <include reference="4If-HG-O3O"/>
                                 <include reference="H2p-b9-j3c"/>
                                 <include reference="bvr-qK-RLl"/>
@@ -91,16 +275,32 @@
                                 <include reference="Dpm-WV-OAJ"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="eCh-XH-mUa"/>
                                 <include reference="W3M-aC-BVh"/>
                                 <include reference="aVW-wV-d2r"/>
                                 <include reference="qyT-UQ-wgp"/>
+                                <include reference="SUH-nu-PiK"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="gameBoardImageView" destination="Yft-nw-tq5" id="omk-yF-azP"/>
+                        <outlet property="gameStateLabel" destination="lYn-Ah-NFG" id="be8-RD-cRj"/>
+                        <outlet property="gameStateNavBar" destination="Dpm-WV-OAJ" id="AEe-xk-3G8"/>
+                        <outletCollection property="gameBoardButtons" destination="mje-h5-1Yk" collectionClass="NSMutableArray" id="GfI-6T-FYe"/>
+                        <outletCollection property="gameBoardButtons" destination="yU1-j6-oJv" collectionClass="NSMutableArray" id="arv-ee-JzL"/>
+                        <outletCollection property="gameBoardButtons" destination="20H-2E-Xal" collectionClass="NSMutableArray" id="Qtm-3p-mA5"/>
+                        <outletCollection property="gameBoardButtons" destination="lOm-Hp-B91" collectionClass="NSMutableArray" id="6nU-W9-qR6"/>
+                        <outletCollection property="gameBoardButtons" destination="fok-vi-GAS" collectionClass="NSMutableArray" id="kTa-qT-aGR"/>
+                        <outletCollection property="gameBoardButtons" destination="gP4-a5-Lqx" collectionClass="NSMutableArray" id="Q7M-Se-IJu"/>
+                        <outletCollection property="gameBoardButtons" destination="2bL-UB-RIi" collectionClass="NSMutableArray" id="8G8-kO-TG8"/>
+                        <outletCollection property="gameBoardButtons" destination="RJz-qX-eEY" collectionClass="NSMutableArray" id="3fn-7j-GGp"/>
+                        <outletCollection property="gameBoardButtons" destination="Hfo-of-KLP" collectionClass="NSMutableArray" id="BMk-Ve-0Z1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="124"/>
+            <point key="canvasLocation" x="130.43478260869566" y="123.21428571428571"/>
         </scene>
     </scenes>
 </document>
